@@ -37,13 +37,15 @@ class Tweet <<Entity>> {
   + original : [Tweet]
 }
 
-Class Notification <<Entitity>> {
+Class Notification  {
   + usertags : [User]
   + mentions : [User]
   + likes : [User]
 }
 
-
+class Hashtag {
+  + tweets : [Tweet]
+}
 
 
 @enduml
