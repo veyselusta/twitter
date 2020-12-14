@@ -38,10 +38,11 @@ class Tweet <<Entity>> {
 }
 
 Class Notification <<Entitity>> {
-  + usertag : [User]
-  + mention : [User]
-  + like : [User]
+  + usertags : [User]
+  + mentions : [User]
+  + likes : [User]
 }
+
 
 
 
