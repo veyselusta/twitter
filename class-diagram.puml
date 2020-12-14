@@ -1,0 +1,32 @@
+@startuml "Class Diagram"
+
+class User <<Entity>> {
+  + name : String
+  + username : String
+  + location : String
+  + website : String
+  + mail : String
+  + profilePhoto : String
+  + bacgroundPhoto : String
+  + bio : String
+  + birth : Number
+  + createDate : Date
+  + followers : [User]
+  + following : [User]
+  + directMessages : [Message]
+  + tweets : [Tweet]
+  + likedTweet : [Tweet]
+  + pinnedTweet : [Tweet]
+  + notification : [Notification]
+
+  + follow()
+  + tweet()
+  + retweet()
+  + like()
+  + reply()
+  + pinTweet()
+  + directMessage()
+
+}
+
+@enduml
