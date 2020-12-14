@@ -53,11 +53,13 @@ class Messages <<ValueObject>> {
   + user : [user]
 }
 
-class Thread <<ValueObject>> {
+class Thread  {
   + tweets : [Tweet]
 }
 
-
-
+User *-- Tweet
+User *-- Notification
+User *-- Hashtag
+User *-- Messages
 
 @enduml
