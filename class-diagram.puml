@@ -26,7 +26,15 @@ class User <<Entity>> {
   + reply()
   + pinTweet()
   + directMessage()
+}
 
+class Tweet <<Entity>> {
+  + user : User
+  + createDate : String
+  + text : String
+  + replies : [Tweet]
+  + retweets : [Tweet]
+  + original : [Tweet]
 }
 
 @enduml
