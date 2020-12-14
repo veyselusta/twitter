@@ -47,5 +47,11 @@ class Hashtag {
   + tweets : [Tweet]
 }
 
+class Messages {
+  + message : String
+  + creatDate : Date
+  + user : [user]
+}
+
 
 @enduml
