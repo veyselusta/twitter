@@ -37,21 +37,27 @@ class Tweet <<Entity>> {
   + original : [Tweet]
 }
 
-Class Notification  {
+Class Notification <<ValueObject>>  {
   + usertags : [User]
   + mentions : [User]
   + likes : [User]
 }
 
-class Hashtag {
+class Hashtag <<ValueObject>> {
   + tweets : [Tweet]
 }
 
-class Messages {
+class Messages <<ValueObject>> {
   + message : String
   + creatDate : Date
   + user : [user]
 }
+
+class Thread <<ValueObject>> {
+  + tweets : [Tweet]
+}
+
+
 
 
 @enduml
