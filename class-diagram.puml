@@ -7,17 +7,17 @@ class User <<Entity>> {
   + website : String
   + mail : String
   + profilePhoto : String
-  + bacgroundPhoto : String
+  + backgroundPhoto : String
   + bio : String
   + birth : Number
-  + createDate : Date
+  + createdAt : Date
   + followers : [User]
   + following : [User]
   + directMessages : [Message]
   + tweets : [Tweet]
   + likedTweet : [Tweet]
   + pinnedTweet : [Tweet]
-  + notification : [Notification]
+  + notifications : [Notification]
 
   + follow()
   + tweet()
@@ -25,35 +25,39 @@ class User <<Entity>> {
   + like()
   + reply()
   + pinTweet()
-  + directMessage()
+  + sendDirectMessage()
 }
 
 class Tweet <<Entity>> {
   + user : User
-  + createDate : String
   + text : String
+  + createDate : String
+  + likedBy : [User]
   + replies : [Tweet]
   + retweets : [Tweet]
   + original : [Tweet]
 }
 
-Class Notification <<ValueObject>>  {
-  + usertags : [User]
+Class Notification <<Entity>>  {
+  + userTags : [User]
   + mentions : [User]
+  + reTweetBy : [User]
   + likes : [User]
+  + messages : [User]
+  + follows : [User]
 }
 
-class Hashtag <<ValueObject>> {
+class Hashtag <<Entity>> {
   + tweets : [Tweet]
 }
 
-class Messages <<ValueObject>> {
+class Message <<Entity>> {
   + message : String
   + creatDate : Date
   + user : [user]
 }
 
-class Thread  {
+class Thread <<Entity>>  {
   + tweets : [Tweet]
 }
 
