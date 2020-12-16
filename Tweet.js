@@ -1,4 +1,3 @@
-
 class Tweet{
   constructor(user,text){
     this.user = user
@@ -10,3 +9,5 @@ class Tweet{
     this.original = []
   }
 }
+
+module.exports = Tweet
