@@ -41,7 +41,7 @@ class Tweet <<Entity>> {
 Class Notification <<Entity>>  {
   + userTags : [User]
   + mentions : [User]
-  + reTweetBy : [User]
+  + retweetBy : [User]
   + likes : [User]
   + messages : [User]
   + follows : [User]
