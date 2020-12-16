@@ -47,19 +47,12 @@ Class Notification <<Entity>>  {
   + follows : [User]
 }
 
-class Hashtag <<Entity>> {
-  + tweets : [Tweet]
-}
-
 class Message <<Entity>> {
   + message : String
   + creatDate : Date
   + user : [user]
 }
 
-class Thread <<Entity>>  {
-  + tweets : [Tweet]
-}
 
 User *-- Tweet
 User *-- Notification

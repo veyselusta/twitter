@@ -1,8 +1,6 @@
 const Tweet = require('./Tweet.js')
 const Notification = require('./Notification.js')
-const Hashtag = require('./Hashtag.js')
 const Message = require('./Message.js')
-const Thread = require('./Thread.js')
 
 
 
@@ -53,8 +51,10 @@ tweet(text){
   tweet.original.push(tweet)
   this.tweets.push(tweet)
   
-  const newTweet = new Thread()
-  newTweet.tweets.push(tweet)
+//  if(tweet.text.includes('@')){
+//    const userName = filtered(tweet.text)
+//    global.[userName].notifications.userTags.push(this)
+//  }
 }
 
 retweet(tweet){
@@ -62,20 +62,12 @@ retweet(tweet){
   this.tweets.push(tweet)
 
   const newNotification = new Notification() 
-  newNotification.reTweetBy.push(this)
+  newNotification.retweetBy.push(this)
   tweet.user.notifications.push(newNotification)
-
-  const newTweet = new Thread()
-  newTweet.tweets.push(tweet)
 }
 
 pinTweet(tweet){
   this.pinnedTweet.push(tweet)
-  
-  if(tweet.text.includes('@')){
-    const userName = filtered(tweet.tex)
-    window[userName].notifications.userTags.push(this)
-  }
 }
 
 like(tweet){
@@ -86,9 +78,9 @@ like(tweet){
   tweet.user.notifications.push(newNotification)
 }
 
-reply(tweet){
-  const tweet = new Tweet(this,text)
-  tweet.replies.push(tweet)
+reply(tweet, text){
+  const replyTweet = new Tweet(this,text)
+  replyTweet.replies.push(tweet)
 
   const newNotification = new Notification()
   newNotification.mentions.push(this)
@@ -98,7 +90,7 @@ reply(tweet){
 sendDirectMessage(message){
   const dm = new Message(message)
   this.directMessages.push(dm)
-  dm.push(this)
+  dm.user.push(this)
 
   const newNotification = new Notification()
   newNotification.messages.push(this)
