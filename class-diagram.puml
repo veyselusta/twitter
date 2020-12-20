@@ -33,9 +33,8 @@ class Tweet <<Entity>> {
   + text : String
   + createDate : String
   + likedBy : [User]
+  + retweets : [User]
   + replies : [Tweet]
-  + retweets : [Tweet]
-  + original : [Tweet]
 }
 
 Class Notification <<Entity>>  {

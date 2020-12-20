@@ -6,7 +6,6 @@ class Tweet{
     this.likedBy = []
     this.replies = []
     this.retweets =[]
-    this.original = []
   }
 }
 

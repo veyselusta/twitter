@@ -48,7 +48,6 @@ follow(user){
 
 tweet(text){
   const tweet = new Tweet(this,text)
-  tweet.original.push(tweet)
   this.tweets.push(tweet)
   
 //  if(tweet.text.includes('@')){
@@ -58,7 +57,7 @@ tweet(text){
 }
 
 retweet(tweet){
-  tweet.retweets.push(tweet)
+  tweet.retweets.push(user)
   this.tweets.push(tweet)
 
   const newNotification = new Notification() 
