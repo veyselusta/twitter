@@ -57,7 +57,7 @@ tweet(text){
 }
 
 retweet(tweet){
-  tweet.retweets.push(user)
+  tweet.retweets.push(this)
   this.tweets.push(tweet)
 
   const newNotification = new Notification() 

@@ -4,7 +4,8 @@
   "description": "twitter clone ",
   "main": "index.js",
   "scripts": {
-    "start": "index.js",
+    "start": "node index.js",
+    "watch": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/veyselusta/Twitter/issues"
   },
-  "homepage": "https://github.com/veyselusta/Twitter#readme"
+  "homepage": "https://github.com/veyselusta/Twitter#readme",
+  "dependencies": {
+    "nodemon": "^2.0.6"
+  }
 }
