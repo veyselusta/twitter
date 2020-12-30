@@ -1,11 +1,13 @@
 const fs = require('fs')
+const flatted = require('flatted')
 
-function save(filename, object){
-  fs.writeFileSync(`./${filename}.json `, JSON.stringify(object,null,2))
+const save = (filename, object) => {
+  fs.writeFileSync(`./${filename}.json`, flatted.stringify(object,null,2))
 }
 
-function load(){
-  
+const load = (filename) => {
+  const file = fs.readFileSync(`./${filename}.json`, 'utf8')
+  return flatted.parse(file)
 }
 
 module.exports = {save, load}
