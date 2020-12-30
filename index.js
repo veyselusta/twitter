@@ -1,4 +1,5 @@
 const User = require('./User.js')
+const db = require('./database.js')
 
 const veysel = new User({
   name : 'veysel',
@@ -30,4 +31,8 @@ veysel.pinTweet(veysel.tweets[1])
 veysel.sendDirectMessage('how are you today')
 kutlay.sendDirectMessage('i am good what about you')
 
-console.log(veysel)
+db.save('user', [veysel])
+
+const file  = db.load('user')
+
+console.log(file[0].directMessages)
