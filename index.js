@@ -32,7 +32,11 @@ veysel.sendDirectMessage('how are you today')
 kutlay.sendDirectMessage('i am good what about you')
 
 db.save('user', [veysel])
+db.insert('user', [kutlay])
 
-const file  = db.load('user')
+const data  = db.load('user')
 
-console.log(file[0].directMessages)
+const ee  = db.find('user', 'veysel')
+console.log(ee)
+//db.remove('user', 1)
+//console.log(data)
