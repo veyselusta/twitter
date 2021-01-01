@@ -15,4 +15,15 @@ const insert = (filename, object) => {
   save(filename,data.concat(object))
 }
 
-module.exports = {save, load, insert}
+const remove = (filename, index) => {
+  const data = load(filename)
+  data.splice(index,1)
+  save(filename, data)
+}
+
+const find = (filename, name) => {
+  const data = load(filename)
+  return data.find((obj)=> obj.name == name)
+}
+
+module.exports = {save, load, insert, remove, find}
