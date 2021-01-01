@@ -1,7 +1,7 @@
 const Tweet = require('./Tweet.js')
 const Notification = require('./Notification.js')
 const Message = require('./Message.js')
-
+const uuid = require('uuid')
 
 
 class User {
@@ -15,7 +15,8 @@ class User {
   backgroundphoto,
   bio,
   birth,
-  createDate
+  createDate,
+  uuid = uuid.v4()
   })
   {
     this.name = name
@@ -96,11 +97,15 @@ sendDirectMessage(message){
   this.notifications.push(newNotification)
 }
 
+static create(){
+  return new User(...arguments)
 }
 
-function filtered(str){
-  return str.split(' ').filter((item)=>item.includes('@')).join('').slice(1)
 }
+
+//function filtered(str){
+//  return str.split(' ').filter((item)=>item.includes('@')).join('').slice(1)
+//}
 
 
 module.exports = User
