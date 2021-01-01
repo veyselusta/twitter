@@ -21,9 +21,9 @@ const remove = (filename, index) => {
   save(filename, data)
 }
 
-const find = (filename, name) => {
+const findByName = (filename, name) => {
   const data = load(filename)
   return data.find((obj)=> obj.name == name)
 }
 
-module.exports = {save, load, insert, remove, find}
+module.exports = {save, load, insert, remove, findByName}
