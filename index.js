@@ -1,5 +1,6 @@
-const User = require('./User.js')
-const db = require('./database.js')
+const User = require('./models/User.js')
+const UserDatabase = require('./database/user-database')
+
 
 const veysel = new User({
   name : 'veysel',
@@ -21,9 +22,14 @@ veysel.tweet('everything is gonna be alright')
 
 kutlay.tweet('hello @veysel')
 kutlay.tweet('i love javascript')
+
+veysel.follow(kutlay)
+kutlay.follow(veysel)
+
 veysel.reply(kutlay.tweets[1], 'You were supposed to write JavaScript respect please')
 
 veysel.retweet(kutlay.tweets[1])
+
 veysel.like(kutlay.tweets[0])
 
 veysel.pinTweet(veysel.tweets[1])
@@ -31,12 +37,9 @@ veysel.pinTweet(veysel.tweets[1])
 veysel.sendDirectMessage('how are you today')
 kutlay.sendDirectMessage('i am good what about you')
 
-db.save('user', [veysel])
-db.insert('user', [kutlay])
+UserDatabase.save([veysel,kutlay])
+const users = UserDatabase.load()
 
-const data  = db.load('user')
+const test = users[0].directMessages
 
-const ee  = db.find('user', 'veysel')
-console.log(ee)
-//db.remove('user', 1)
-//console.log(data)
+console.log(users[0].following)
