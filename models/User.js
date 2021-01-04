@@ -16,6 +16,13 @@ class User {
   bio,
   birth,
   createDate,
+  followers = [],
+  following = [],
+  directMessages = [],
+  tweets = [],
+  likedTweets = [],
+  pinnedTweet = [],
+  notifications = [],
   id = uuid.v4()
   })
   {
@@ -30,13 +37,13 @@ class User {
     this.birth = birth
     this.createDate = createDate
     this.id = id
-    this.followers = []
-    this.following = []
-    this.directMessages = []
-    this.tweets = []
-    this.likedTweets = []
-    this.pinnedTweet = []
-    this.notifications = []
+    this.followers = followers
+    this.following = following
+    this.directMessages = directMessages
+    this.tweets = tweets
+    this.likedTweets = likedTweets
+    this.pinnedTweet = pinnedTweet
+    this.notifications = notifications
   }
 
 follow(user){
@@ -115,13 +122,13 @@ static create({
   bio,
   birth,
   createDate,
-  followers = [],
-  following = [],
-  directMessages = [],
-  tweets = [],
-  likedTweets = [],
-  pinnedTweet = [],
-  notifications = []
+  followers,
+  following,
+  directMessages,
+  tweets,
+  likedTweets,
+  pinnedTweet,
+  notifications
 })
   
   {
