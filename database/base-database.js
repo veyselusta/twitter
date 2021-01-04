@@ -19,8 +19,8 @@ class BaseDatabase {
   }
   
   insert(object) {
-    const data = load()
-    save(filename,data.concat(object))
+    const data = this.load()
+    this.save(data.concat(object))
   }
   
   remove (index) {
