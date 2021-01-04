@@ -39,7 +39,7 @@
   "likedTweets": "31",
   "pinnedTweet": "32",
   "notifications": "33"
-},"veysel","veysel15","vyslusta1@gmail.com","hello twitter","e82fa954-0ab2-42a9-b6b2-44b28dc4197d",[
+},"veysel","veysel15","vyslusta1@gmail.com","hello twitter","f78c26ec-bac7-49dc-97e1-f782062b7129",[
   "34"
 ],[
   "34"
@@ -56,7 +56,7 @@
 ],[
   "40",
   "41"
-],"kutlay","kutlay_12","51f8eca3-2f24-4dca-a424-efa5b862a1c9",[
+],"kutlay","kutlay_12","d529e5e9-5ece-422e-ad2d-118a74f91dd0",[
   "42"
 ],[
   "42"
@@ -71,7 +71,7 @@
   "46",
   "47",
   "48"
-],"fe4c3e39-8b67-4ed1-bb4d-b27d3bd69745",[
+],"443c090e-9c22-4d83-b588-e9610d237705",[
   "49"
 ],[
   "49"
@@ -133,25 +133,18 @@
   "replies": "76",
   "retweets": "77"
 },{
-  "userTags": "78",
-  "mentions": "79",
-  "retweetBy": "80",
-  "likes": "81",
-  "messages": "82",
-  "follows": "83"
+  "user": "42",
+  "type": "78"
 },{
-  "userTags": "84",
-  "mentions": "85",
-  "retweetBy": "86",
-  "likes": "87",
-  "messages": "88",
-  "follows": "89"
+  "user": "42",
+  "type": "79",
+  "item": "35"
 },{
   "name": "4",
   "username": "5",
   "mail": "6",
   "bio": "7",
-  "id": "90",
+  "id": "80",
   "followers": "9",
   "following": "10",
   "directMessages": "11",
@@ -160,151 +153,121 @@
   "pinnedTweet": "14",
   "notifications": "15"
 },{
-  "message": "91",
+  "message": "81",
   "creaDate": "60",
-  "user": "92"
+  "user": "82"
 },{
-  "userTags": "93",
-  "mentions": "94",
-  "retweetBy": "95",
-  "likes": "96",
-  "messages": "97",
-  "follows": "98"
+  "user": "34",
+  "type": "78"
 },{
-  "userTags": "99",
-  "mentions": "100",
-  "retweetBy": "101",
-  "likes": "102",
-  "messages": "103",
-  "follows": "104"
+  "user": "42",
+  "type": "83",
+  "item": "84"
 },{
-  "userTags": "105",
-  "mentions": "106",
-  "retweetBy": "107",
-  "likes": "108",
-  "messages": "109",
-  "follows": "110"
+  "user": "42",
+  "type": "85",
+  "item": "38"
 },{
-  "userTags": "111",
-  "mentions": "112",
-  "retweetBy": "113",
-  "likes": "114",
-  "messages": "115",
-  "follows": "116"
+  "user": "42",
+  "type": "86",
+  "item": "39"
 },{
-  "userTags": "117",
-  "mentions": "118",
-  "retweetBy": "119",
-  "likes": "120",
-  "messages": "121",
-  "follows": "122"
+  "user": "34",
+  "type": "79",
+  "item": "43"
 },{
   "name": "16",
   "username": "17",
   "id": "58",
-  "followers": "123",
-  "following": "124",
-  "directMessages": "125",
-  "tweets": "126",
-  "likedTweets": "127",
-  "pinnedTweet": "128",
-  "notifications": "129"
+  "followers": "87",
+  "following": "88",
+  "directMessages": "89",
+  "tweets": "90",
+  "likedTweets": "91",
+  "pinnedTweet": "92",
+  "notifications": "93"
 },{
   "message": "59",
   "creaDate": "60",
-  "user": "130"
+  "user": "94"
 },{
-  "user": "131",
+  "user": "95",
   "text": "62",
   "createDate": "60",
-  "likedBy": "132",
-  "replies": "133",
-  "retweets": "134"
+  "likedBy": "96",
+  "replies": "97",
+  "retweets": "98"
 },{
-  "user": "131",
+  "user": "95",
   "text": "66",
   "createDate": "60",
-  "likedBy": "135",
-  "replies": "136",
-  "retweets": "137"
+  "likedBy": "99",
+  "replies": "100",
+  "retweets": "101"
 },{
   "user": "49",
   "text": "70",
   "createDate": "60",
-  "likedBy": "138",
-  "replies": "139",
-  "retweets": "140"
+  "likedBy": "102",
+  "replies": "103",
+  "retweets": "104"
 },{
   "user": "3",
-  "text": "141",
+  "text": "105",
   "createDate": "60",
-  "likedBy": "142",
-  "replies": "143",
-  "retweets": "144"
+  "likedBy": "106",
+  "replies": "107",
+  "retweets": "108"
 },{
   "user": "49",
   "text": "74",
   "createDate": "60",
-  "likedBy": "145",
-  "replies": "146",
-  "retweets": "147"
+  "likedBy": "109",
+  "replies": "110",
+  "retweets": "111"
 },{
-  "userTags": "148",
-  "mentions": "149",
-  "retweetBy": "150",
-  "likes": "151",
-  "messages": "152",
-  "follows": "153"
+  "user": "95",
+  "type": "78"
 },{
-  "userTags": "154",
-  "mentions": "155",
-  "retweetBy": "156",
-  "likes": "157",
-  "messages": "158",
-  "follows": "159"
-},"f888627c-8347-4edc-8366-9f87d3f15c3c","how are you today","2021-1-4",[
+  "user": "95",
+  "type": "79",
+  "item": "50"
+},"c3598254-7db3-4f3d-b133-d0d1bbf29061","how are you today","2021-1-4",[
   "42"
 ],"hello world",[],[],[],"everything is gonna be alright",[],[],[],"i love javascript",[],[],[
   "42"
-],"hello @veysel",[],[],[],[],[],[],[],[],[
-  "42"
-],[],[],[],[],[
-  "42"
-],[],"655eea8f-c21d-430b-9d88-162a4cc9078e","i am good what about you",[
+],"hello @veysel",[],[],[],"follow","direct message","db13a26e-fd8e-4e69-b37c-29d482e4ad63","i am good what about you",[
   "34"
-],[],[],[],[],[],[
-  "34"
-],[],[
-  "42"
-],[],[],[],[],[],[],[
-  "42"
-],[],[],[],[],[],[],[
-  "42"
-],[],[],[],[],[],[],[
-  "34"
-],[],[
-  "131"
+],"reply",{
+  "user": "42",
+  "text": "112",
+  "createDate": "60",
+  "likedBy": "113",
+  "replies": "114",
+  "retweets": "115"
+},"retweet","like",[
+  "95"
 ],[
-  "131"
+  "95"
 ],[
-  "160"
+  "116"
 ],[
   "55",
   "53"
 ],[],[],[
-  "161",
-  "162",
-  "163",
-  "164",
-  "165"
+  "117",
+  "118",
+  "119",
+  "120",
+  "121"
 ],[
-  "131"
+  "95"
 ],{
   "name": "4",
   "username": "5",
   "mail": "6",
   "bio": "7",
-  "id": "90",
+  "id": "80",
   "followers": "27",
   "following": "28",
   "directMessages": "29",
@@ -313,60 +276,41 @@
   "pinnedTweet": "32",
   "notifications": "33"
 },[],[],[],[],[],[],[],[],[
-  "131"
-],"new tweet",[],[],[],[],[],[],[],[],[],[],[],[
-  "131"
-],[],[],[],[],[
-  "131"
+  "95"
+],"new tweet",[],[],[],[],[],[],"You were supposed to write JavaScript respect please",[],[
+  "38"
 ],[],{
-  "message": "91",
+  "message": "81",
   "creaDate": "60",
-  "user": "166"
+  "user": "122"
 },{
-  "userTags": "167",
-  "mentions": "168",
-  "retweetBy": "169",
-  "likes": "170",
-  "messages": "171",
-  "follows": "172"
+  "user": "49",
+  "type": "78"
 },{
-  "userTags": "173",
-  "mentions": "174",
-  "retweetBy": "175",
-  "likes": "176",
-  "messages": "177",
-  "follows": "178"
+  "user": "95",
+  "type": "83",
+  "item": "123"
 },{
-  "userTags": "179",
-  "mentions": "180",
-  "retweetBy": "181",
-  "likes": "182",
-  "messages": "183",
-  "follows": "184"
+  "user": "95",
+  "type": "85",
+  "item": "53"
 },{
-  "userTags": "185",
-  "mentions": "186",
-  "retweetBy": "187",
-  "likes": "188",
-  "messages": "189",
-  "follows": "190"
+  "user": "95",
+  "type": "86",
+  "item": "55"
 },{
-  "userTags": "191",
-  "mentions": "192",
-  "retweetBy": "193",
-  "likes": "194",
-  "messages": "195",
-  "follows": "196"
+  "user": "49",
+  "type": "79",
+  "item": "116"
 },[
   "49"
-],[],[],[],[],[],[
-  "49"
-],[],[
-  "131"
-],[],[],[],[],[],[],[
-  "131"
-],[],[],[],[],[],[],[
-  "131"
-],[],[],[],[],[],[],[
-  "49"
+],{
+  "user": "95",
+  "text": "112",
+  "createDate": "60",
+  "likedBy": "124",
+  "replies": "125",
+  "retweets": "126"
+},[],[
+  "53"
 ],[]]

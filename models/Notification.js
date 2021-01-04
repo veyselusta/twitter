@@ -1,11 +1,8 @@
 class Notification {
-  constructor(){
-    this.userTags = []
-    this.mentions = []
-    this.retweetBy = []
-    this.likes = []
-    this.messages = []
-    this.follows = []
+  constructor(user,type,item){
+    this.user = user
+    this.type = type
+    this.item = item
   }
 }
 

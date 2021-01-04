@@ -50,8 +50,7 @@ follow(user){
   this.following.push(user)
   user.followers.push(this)
 
-  const newNotification = new Notification() 
-  newNotification.follows.push(this)
+  const newNotification = new Notification(this,'follow') 
   this.notifications.push(newNotification)
 }
 
@@ -75,8 +74,7 @@ retweet(tweet){
   tweet.retweets.push(this)
   this.tweets.push(tweet)
 
-  const newNotification = new Notification() 
-  newNotification.retweetBy.push(this)
+  const newNotification = new Notification(this,'retweet',tweet) 
   tweet.user.notifications.push(newNotification)
 }
 
@@ -87,8 +85,7 @@ pinTweet(tweet){
 like(tweet){
   this.likedTweets.push(tweet)
 
-  const newNotification = new Notification()
-  newNotification.likes.push(this)
+  const newNotification = new Notification(this,'like',tweet)
   tweet.user.notifications.push(newNotification)
 }
 
@@ -96,8 +93,7 @@ reply(tweet, text){
   const replyTweet = new Tweet(this,text)
   replyTweet.replies.push(tweet)
 
-  const newNotification = new Notification()
-  newNotification.mentions.push(this)
+  const newNotification = new Notification(this,'reply',replyTweet)
   tweet.user.notifications.push(newNotification)
 }
 
@@ -106,8 +102,7 @@ sendDirectMessage(message, user){
   this.directMessages.push(dm)
   dm.user.push(this)
 
-  const newNotification = new Notification()
-  newNotification.messages.push(this)
+  const newNotification = new Notification(this,'direct message',dm)
   this.notifications.push(newNotification)
 }
 

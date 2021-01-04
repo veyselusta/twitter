@@ -6,5 +6,5 @@ const veysel = UserDatabase.findByName('veysel')
 veysel.tweet('new tweet')
 UserDatabase.update(veysel)
 
-console.log(veysel.tweets[3])
+console.log(veysel)
 
