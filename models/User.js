@@ -104,8 +104,46 @@ sendDirectMessage(message, user){
   this.notifications.push(newNotification)
 }
 
-static create({...obj}){
-  return new User()
+static create({ 
+  name,
+  username,
+  location,
+  website,
+  mail,
+  profilephoto,
+  backgroundphoto,
+  bio,
+  birth,
+  createDate,
+  followers = [],
+  following = [],
+  directMessages = [],
+  tweets = [],
+  likedTweets = [],
+  pinnedTweet = [],
+  notifications = []
+})
+  
+  {
+  return new User({
+    name,
+    username,
+    location,
+    website,
+    mail,
+    profilephoto,
+    backgroundphoto,
+    bio,
+    birth,
+    createDate,
+    followers,
+    following,
+    directMessages,
+    tweets,
+    likedTweets,
+    pinnedTweet,
+    notifications
+  })
 }
 
 }
