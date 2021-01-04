@@ -8,11 +8,11 @@ class BaseDatabase {
   }
 
   save(objects) {
-    fs.writeFileSync(`./${this.filename}.json`, flatted.stringify(objects,null,2))
+    fs.writeFileSync(`./database/${this.filename}.json`, flatted.stringify(objects,null,2))
   }
   
   load() {
-    const file = fs.readFileSync(`./${this.filename}.json`, 'utf8')
+    const file = fs.readFileSync(`./database/${this.filename}.json`, 'utf8')
     const objects = flatted.parse(file)
 
     return objects.map(this.model.create)
