@@ -1,43 +1,10 @@
 const User = require('./models/User.js')
-const userDatabase = require('./database/user-database.js')
+const UserDatabase = require('./database/user-database.js')
 
+const veysel = UserDatabase.findByName('veysel')
 
-const veysel = new User({
-  name : 'veysel',
-  username : 'veysel15',
-  mail : 'vyslusta1@gmail.com',
-  bio : 'hello twitter'
-})
+veysel.tweet('new tweet')
+UserDatabase.update(veysel)
 
-const kutlay = new User({
-  name : 'kutlay',
-  username : 'kutlay_12',
-})
+console.log(veysel.tweets[3])
 
-
-
-
-veysel.tweet('hello world')
-veysel.tweet('everything is gonna be alright')
-
-kutlay.tweet('hello @veysel')
-kutlay.tweet('i love javascript')
-
-veysel.follow(kutlay)
-kutlay.follow(veysel)
-
-veysel.reply(kutlay.tweets[1], 'You were supposed to write JavaScript respect please')
-
-veysel.retweet(kutlay.tweets[1])
-
-veysel.like(kutlay.tweets[0])
-
-veysel.pinTweet(veysel.tweets[1])
-
-veysel.sendDirectMessage('how are you today')
-kutlay.sendDirectMessage('i am good what about you')
-
-userDatabase.save([veysel,kutlay])
-const vey = userDatabase.findByName('veysel')
-
-console.log(vey.tweets[0])
