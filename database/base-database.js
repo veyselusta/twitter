@@ -19,8 +19,8 @@ class BaseDatabase {
   }
   
   insert(object) {
-    const data = this.load()
-    this.save(data.concat(object))
+    const objects = this.load()
+    this.save(objects.concat(object))
   }
 
   find(id) {
@@ -29,19 +29,16 @@ class BaseDatabase {
 
   update(object) {
     const objects = this.load()
-
     const index = objects.findIndex(o => o.id == object.id)
-
-    if (index == -1) throw new Error(`Cannot find ${this.model.name} instance with id ${object.id}`)
-
+    
     objects.splice(index, 1, object)
     this.save(objects)
   }
   
   remove (index) {
-    const data = load(filename)
-    data.splice(index,1)
-    save(filename, data)
+    const objects = load(filename)
+    objects.splice(index,1)
+    save(filename, objects)
   }
 
 }
