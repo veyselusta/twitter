@@ -4,9 +4,9 @@ const User = require('../models/User')
 class UserDatabase extends BaseDatabase {
 
   findByName(name) {
-    const data = load(filename)
+    const data = this.load()
 
-    return data.find((obj)=> obj.name == name)
+    return data.find(obj=> obj.name == name)
   }
 }
 

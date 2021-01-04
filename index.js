@@ -1,5 +1,5 @@
 const User = require('./models/User.js')
-const UserDatabase = require('./database/user-database')
+const userDatabase = require('./database/user-database.js')
 
 
 const veysel = new User({
@@ -37,9 +37,7 @@ veysel.pinTweet(veysel.tweets[1])
 veysel.sendDirectMessage('how are you today')
 kutlay.sendDirectMessage('i am good what about you')
 
-UserDatabase.save([veysel,kutlay])
-const users = UserDatabase.load()
+userDatabase.save([veysel,kutlay])
+const vey = userDatabase.findByName('veysel')
 
-const test = users[0].directMessages
-
-console.log(users[0].following)
+console.log(vey.tweets[0])
