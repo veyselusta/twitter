@@ -1,6 +1,6 @@
 class Notification {
-  constructor(user,type,item){
-    this.user = user
+  constructor(author,type,item){
+    this.author = author
     this.type = type
     this.item = item
   }
