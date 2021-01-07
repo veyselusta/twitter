@@ -91,11 +91,10 @@ sendDirectMessage(message, user){
 
   this.directMessages.push(dm)
   user.directMessages.push(dm)
-  
   dm.user.push(this)
 
   const newNotification = new Notification(this,'direct message',dm)
-  this.notifications.push(newNotification)
+  user.notifications.push(newNotification)
 }
 
 static create({ 
