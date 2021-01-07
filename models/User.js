@@ -92,7 +92,7 @@ sendDirectMessage(message, user){
   this.directMessages.push(dm)
   user.directMessages.push(dm)
 
-  const newNotification = new Notification(this,'direct message',dm)
+  const newNotification = new Notification(this,'dm',dm)
   user.notifications.push(newNotification)
 }
 
