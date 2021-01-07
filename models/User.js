@@ -57,18 +57,7 @@ follow(user){
 tweet(text){
   const tweet = new Tweet(this,text)
   this.tweets.push(tweet)
-  
-//  if(tweet.text.includes('@')){
-//    const userName = filtered(tweet.text)
-//    global.[userName].notifications.userTags.push(this)
-//  }
 }
-
-//function filtered(str){
-//  return str.split(' ').filter((item)=>item.includes('@')).join('').slice(1)
-//}
-
-
 
 retweet(tweet){
   tweet.retweets.push(this)
@@ -99,7 +88,10 @@ reply(tweet, text){
 
 sendDirectMessage(message, user){
   const dm = new Message(message)
+
   this.directMessages.push(dm)
+  user.directMessages.push(dm)
+  
   dm.user.push(this)
 
   const newNotification = new Notification(this,'direct message',dm)
