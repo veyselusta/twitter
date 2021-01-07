@@ -1,7 +1,7 @@
 class Message {
   constructor(message){
     this.message = message
-    this.creaDate = new Date().toLocaleDateString()
+    this.createdAt = new Date().toLocaleDateString()
     this.user = []
   }
 }

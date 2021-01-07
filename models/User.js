@@ -15,7 +15,6 @@ class User {
   backgroundphoto,
   bio,
   birth,
-  createDate,
   followers = [],
   following = [],
   directMessages = [],
@@ -35,7 +34,6 @@ class User {
     this.backgroundphoto = backgroundphoto
     this.bio = bio
     this.birth = birth
-    this.createDate = createDate
     this.id = id
     this.followers = followers
     this.following = following
@@ -44,6 +42,8 @@ class User {
     this.likedTweets = likedTweets
     this.pinnedTweet = pinnedTweet
     this.notifications = notifications
+    this.createdAt = new Date().toLocaleDateString()
+
   }
 
 follow(user){
