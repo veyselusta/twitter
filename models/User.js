@@ -57,6 +57,8 @@ follow(user){
 tweet(text){
   const tweet = new Tweet(this,text)
   this.tweets.push(tweet)
+
+  return tweet
 }
 
 retweet(tweet){
@@ -65,10 +67,14 @@ retweet(tweet){
 
   const newNotification = new Notification(this,'retweet',tweet) 
   tweet.user.notifications.push(newNotification)
+
+  return tweet
 }
 
 pinTweet(tweet){
   this.pinnedTweet.push(tweet)
+
+  return tweet
 }
 
 like(tweet){
@@ -76,6 +82,8 @@ like(tweet){
 
   const newNotification = new Notification(this,'like',tweet)
   tweet.user.notifications.push(newNotification)
+
+  return tweet
 }
 
 reply(tweet, text){
@@ -84,6 +92,8 @@ reply(tweet, text){
 
   const newNotification = new Notification(this,'reply',replyTweet)
   tweet.user.notifications.push(newNotification)
+
+  return replyTweet
 }
 
 sendDirectMessage(message, user){
@@ -94,6 +104,8 @@ sendDirectMessage(message, user){
 
   const newNotification = new Notification(this,'dm',dm)
   user.notifications.push(newNotification)
+
+  return dm
 }
 
 static create({ 
