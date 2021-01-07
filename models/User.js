@@ -87,11 +87,10 @@ reply(tweet, text){
 }
 
 sendDirectMessage(message, user){
-  const dm = new Message(message)
+  const dm = new Message(message,this)
 
   this.directMessages.push(dm)
   user.directMessages.push(dm)
-  dm.user.push(this)
 
   const newNotification = new Notification(this,'direct message',dm)
   user.notifications.push(newNotification)
