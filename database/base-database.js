@@ -8,14 +8,20 @@ class BaseDatabase {
   }
 
   save(objects) {
-    fs.writeFileSync(`./database/${this.filename}.json`, flatted.stringify(objects,null,2))
+    return new Promise((resolve,reject) => {
+      fs.writeFileSync(`./database/${this.filename}.json`, flatted.stringify(objects,null,2),(err)=>{
+        if(err) return reject()
+        resolve()
+      })
+    })
   }
   
   load() {
-    const file = fs.readFileSync(`./database/${this.filename}.json`, 'utf8')
-    const objects = flatted.parse(file)
-
-    return objects.map(this.model.create)
+    return new Promise((resolve,reject)=>{
+      const file = fs.readFileSync(`./database/${this.filename}.json`, 'utf8',(err,file)=>{
+        resolve(objects.map(this.model.create))
+      })
+    })
   }
   
   insert(object) {
@@ -36,9 +42,9 @@ class BaseDatabase {
   }
   
   remove (index) {
-    const objects = load(filename)
+    const objects = this.load()
     objects.splice(index,1)
-    save(filename, objects)
+    this.save(objects)
   }
 
 }
