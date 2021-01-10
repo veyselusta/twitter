@@ -1,5 +1,5 @@
 const User = require('./models/User.js')
-const UserDatabase = require('./database/user-database.js')
+const userDatabase = require('./database/user-database.js')
 
 
 const veysel = new User({
@@ -34,16 +34,18 @@ veysel.like(kutlay.tweets[0])
 
 veysel.pinTweet(veysel.tweets[1])
 
-veysel.sendDirectMessage('how are you today')
-kutlay.sendDirectMessage('i am good what about you')
+veysel.sendDirectMessage('how are you today',veysel)
+kutlay.sendDirectMessage('i am good what about you', kutlay)
 
-UserDatabase.save([veysel,kutlay])
+async function main(){
+  await userDatabase.save([veysel,kutlay])
 
-const ziya = new User({
-  name : 'ziya',
-  username : 'ziya33'
-})
+  const ziya = new User({name : 'ziya'})
 
-ziya.like(kutlay.tweets[0])
+  await userDatabase.insert(ziya)
+  await userDatabase.remove(2)
 
-UserDatabase.insert([ziya])
+  const users = await userDatabase.load()
+  console.log(users)
+}
+main()
