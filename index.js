@@ -1,5 +1,5 @@
 const User = require('./models/User.js')
-const UserDatabase = require('./database/user-database.js')
+const userDatabase = require('./database/user-database.js')
 
 async function run(){
   const veysel = await UserDatabase.findByName('veysel')
