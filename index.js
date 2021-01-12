@@ -1,12 +1,18 @@
-const User = require('./models/User.js')
-const userDatabase = require('./database/user-database.js')
+const express = require('express')
+const bodyParser = require('body-parser')
 
-async function run(){
-  const veysel = await userDatabase.findByName('veysel')
-  veysel.tweet('new tweet')
-  await userDatabase.update(veysel)
-  console.log(veysel)
-}
-run()
+const homeRouter = require('./routes/home')
+
+const app = express()
+
+app.set('view engine', 'pug')
+
+app.use(bodyParser.json())
+
+app.use('home', homeRouter)
+
+app.listen(3000, ()=>{
+  console.log('server ayaklandı')
+})
 
 
