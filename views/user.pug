@@ -1,0 +1,9 @@
+extends layout
+
+block content
+
+  h1 #{user.name}
+
+  ol
+    each tweet in user.tweets
+      li #{tweet.text}
