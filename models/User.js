@@ -125,7 +125,8 @@ static create({
   tweets,
   likedTweets,
   pinnedTweet,
-  notifications
+  notifications,
+  id
 })
   
   {
@@ -146,7 +147,8 @@ static create({
     tweets,
     likedTweets,
     pinnedTweet,
-    notifications
+    notifications,
+    id
   })
 }
 

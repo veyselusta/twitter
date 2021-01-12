@@ -46,6 +46,7 @@ async function main(){
   await userDatabase.remove(2)
 
   const users = await userDatabase.load()
+  const dene = await userDatabase.find('f5c7bc13-5e47-42a9-892a-2d7966f5a1da')
   console.log(users)
 }
 main()

@@ -5,7 +5,8 @@ async function run(){
   const veysel = await userDatabase.findByName('veysel')
   veysel.tweet('new tweet')
   await userDatabase.update(veysel)
-  console.log(veysel)
+  const deneme12 = await userDatabase.find('445beec0-78fd-491c-87d9-bd04303b5c06')
+  console.log(deneme12)
 }
 run()
 

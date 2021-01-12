@@ -32,7 +32,8 @@ class BaseDatabase {
   }
 
   async find(id) {
-    return await (this.load()).find(o => o.id == id)
+    const objects = await this.load()
+    return objects.find(o => o.id == id)
   }
 
   async update(object) {
