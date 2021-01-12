@@ -8,4 +8,11 @@ router.get('/:userId', async (req,res)=>{
   res.render('user', { user })
 })
 
+router.get('/:userId/followers', async (req,res)=>{
+  const followers = await (userDatabase.find(req.params.userId)).followers
+  res.render('followers', { followers })
+})
+
+
+
 module.exports = router
