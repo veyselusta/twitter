@@ -1,4 +1,6 @@
 extends layout
 block content 
-
-  h1 #{followers}
+  h1 followers
+  ol
+    each follower in followers
+      li #{follower.name}
