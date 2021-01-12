@@ -1,2 +1,6 @@
 extends layout
-block content
+block content 
+  h1 followers
+  ol
+    each like in likes
+      li #{like.name}
