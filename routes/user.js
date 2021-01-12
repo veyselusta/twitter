@@ -9,8 +9,21 @@ router.get('/:userId', async (req,res)=>{
 })
 
 router.get('/:userId/followers', async (req,res)=>{
-  const followers = await (userDatabase.find(req.params.userId)).followers
+  const user = await userDatabase.find(req.params.userId)
+  const followers = user.followers
   res.render('followers', { followers })
+})
+
+router.get('/:userId/followings', async (req,res)=>{
+  const user = await userDatabase.find(req.params.userId)
+  const followings = user.following
+  res.render('followings', { followings })
+})
+
+router.get('/:userId/likes', async (req,res)=>{
+  const user = await userDatabase.find(req.params.userId)
+  const likes = user.likedTweets
+  res.render('likes', { likes })
 })
 
 
