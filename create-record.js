@@ -14,8 +14,21 @@ const kutlay = new User({
   username : 'kutlay_12',
 })
 
+const mehmet = new User({name : 'mehmet'})
+const mustafa = new User({name : 'mustafa'})
+const gaspar = new User({name : 'gaspar'})
+const theo = new User({name : 'theo'})
+const luis = new User({name : 'luis'})
 
 
+luis.follow(mehmet)
+luis.follow(mustafa)
+luis.follow(gaspar)
+luis.follow(theo)
+theo.follow(luis)
+mehmet.follow(luis)
+gaspar.follow(luis)
+mustafa.follow(luis)
 
 veysel.tweet('hello world')
 veysel.tweet('everything is gonna be alright')
@@ -38,7 +51,7 @@ veysel.sendDirectMessage('how are you today',veysel)
 kutlay.sendDirectMessage('i am good what about you', kutlay)
 
 async function main(){
-  await userDatabase.save([veysel,kutlay])
+  await userDatabase.save([veysel,kutlay,gaspar,luis,theo,mustafa,mehmet])
 
   const ziya = new User({name : 'ziya'})
 
