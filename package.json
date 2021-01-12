@@ -4,13 +4,17 @@
   "description": "d",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "watch": "nodemon --ignore '*.json'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
     "flatted": "^3.1.0",
-    "nodemon": "^2.0.6",
+    "nodemon": "^2.0.7",
     "uuid": "^8.3.2"
   }
 }
