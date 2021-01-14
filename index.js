@@ -5,9 +5,9 @@ const indexRouter = require('./routes/index')
 const userRouter = require('./routes/user')
 
 const app = express()
-app.use(bodyParser.json())
 
 app.set('view engine', 'pug')
+app.use(bodyParser.json())
 
 
 app.use('/', indexRouter)
