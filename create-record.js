@@ -40,6 +40,8 @@ veysel.follow(kutlay)
 kutlay.follow(veysel)
 
 veysel.reply(kutlay.tweets[1], 'You were supposed to write JavaScript respect please')
+veysel.reply(kutlay.tweets[0], 'hello @kutlay')
+
 
 veysel.retweet(kutlay.tweets[1])
 
