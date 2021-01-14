@@ -15,6 +15,7 @@ class User {
   backgroundphoto,
   bio,
   birth,
+  replies = [],
   followers = [],
   following = [],
   directMessages = [],
@@ -34,6 +35,7 @@ class User {
     this.backgroundphoto = backgroundphoto
     this.bio = bio
     this.birth = birth
+    this.replies = replies
     this.id = id
     this.followers = followers
     this.following = following
@@ -88,7 +90,8 @@ like(tweet){
 
 reply(tweet, text){
   const replyTweet = new Tweet(this,text)
-  replyTweet.replies.push(tweet)
+  this.replies.push(replyTweet)
+  tweet.replies.push(replyTweet)
 
   const newNotification = new Notification(this,'reply',replyTweet)
   tweet.user.notifications.push(newNotification)
@@ -118,6 +121,7 @@ static create({
   backgroundphoto,
   bio,
   birth,
+  replies,
   createDate,
   followers,
   following,
@@ -140,6 +144,7 @@ static create({
     backgroundphoto,
     bio,
     birth,
+    replies,
     createDate,
     followers,
     following,
