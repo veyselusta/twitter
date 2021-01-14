@@ -1,0 +1,7 @@
+extends layout
+block content
+
+  h1 replies
+  ol
+    each reply in replies
+      li #{reply.text} - to - #{reply.user.name}

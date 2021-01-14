@@ -3,6 +3,15 @@ extends layout
 block content
 
   h1 #{user.name} account
+  h2 
+    li 
+      a(href=`/user/${user.id}/followers`) followers
+    li 
+      a(href=`/user/${user.id}/followings`) followings
+    li 
+      a(href=`/user/${user.id}/likes`) likes
+    li 
+      a(href=`/user/${user.id}/reply`) reply
 
   ol
     each tweet in user.tweets
