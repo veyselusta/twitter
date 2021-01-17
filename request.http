@@ -1,0 +1,18 @@
+###
+GET http://localhost:3000/user/600442078fef7b4808ae444d HTTP/1.1
+
+### 
+POST http://localhost:3000/user/create
+content-type : application/json
+
+{"name" : "deneme", "username" : "abc"}
+
+###
+DELETE http://localhost:3000/user/600442068fef7b4808ae4449/delete
+
+
+###
+
+PATCH http://localhost:3000/user/60044507744d0444cc882dd8
+
+{"name" : "değiştir"}
