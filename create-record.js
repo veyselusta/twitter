@@ -1,5 +1,5 @@
 const User = require('./models/User.js')
-const userDatabase = require('./database/user-database.js')
+const userDatabase = require('./services/user-services.js')
 
 
 const veysel = new User({
