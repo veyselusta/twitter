@@ -1,18 +1,41 @@
 ###
 GET http://localhost:3000/user/600442078fef7b4808ae444d HTTP/1.1
 
+###
+GET http://localhost:3000/thread HTTP/1.1
+
+
 ### 
-POST http://localhost:3000/user/create
+POST http://localhost:3000/user/6008403585b7de3010434537/tweet
 content-type : application/json
 
-{"name" : "deneme", "username" : "abc"}
+{"text" : "üç"}
 
 ###
-DELETE http://localhost:3000/user/600442068fef7b4808ae4449/delete
+POST http://localhost:3000/user/create HTTP/1.1
+content-type : application/json
+
+{"name" : "kutlay"}
+
+###
+POST http://localhost:3000/user/6008455ba5838420fcc9bc3d/follow HTTP/1.1
+content-type : application/json
+
+{"otherId" : "6008403585b7de3010434537"}
+
+###
+POST http://localhost:3000/user/6008403585b7de3010434537/like HTTP/1.1
+content-type : application/json
+
+{"name" : "veysel"}
+
+###
+DELETE http://localhost:3000/user/600442068fef7b4808ae4449/delete HTTP/1.1
 
 
 ###
 
-PATCH http://localhost:3000/user/60044507744d0444cc882dd8
+PATCH http://localhost:3000/user/6007507b6c495b496c8d1734 HTTP/1.1
+content-type: application/json
 
-{"name" : "değiştir"}
+{"name" : "degstir"}
