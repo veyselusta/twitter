@@ -1,5 +1,5 @@
 const User = require('./models/User.js')
-const userDatabase = require('./database/user-database.js')
+const userDatabase = require('./services/user-services.js')
 
 async function run(){
   const tweet = await userDatabase.findTweetById('ef3cdb22-0327-497a-a235-24caebbba19b')
