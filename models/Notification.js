@@ -1,13 +1,12 @@
 const mongoose = require('mongoose')
 
 const NotificationSchmea = new mongoose.Schema({
+  type : String,
   author : {
     type : mongoose.Schema.Types.ObjectId,
     ref : 'User',
     autopopulate : { maxDepth : 1 }
   },
-  item : Object,
-  type : String
 })
 
 NotificationSchema.plugin(require('mongoose-autopopulate'))
