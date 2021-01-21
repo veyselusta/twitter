@@ -15,5 +15,5 @@ block content
 
   ol
     each tweet in user.tweets
-      li #{tweet.text}
+      li #{tweet.text} #{tweet.user.name}
 
