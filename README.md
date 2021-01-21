@@ -1,1 +1,1 @@
-# Example of twitter puml class diagram
+# Twitter clone
