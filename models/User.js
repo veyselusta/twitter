@@ -3,18 +3,70 @@ const Notification = require('./Notification.js')
 const Message = require('./Message.js')
 const uuid = require('uuid')
 
+const mongoose = require('mongoose')
 
-class User {
+const UserSchema = new mongoose.Schema({
+  name : { type : String, required : true},
+  username : {type : String, required : true},
+  age : { type : Number, required : true, min : 18},
+
+  replies : [{
+    type : mongoose.Schema.Types.ObjectId,
+    ref : 'Tweet',
+    autopopulate : { maxDepth : 1 }
+  }],
+
+  followers : [{
+    type : mongoose.Schema.Types.ObjectId,
+    ref : 'User',
+    autopopulate : { maxDepth : 1 }
+  }],
+
+  following : [{
+    type : mongoose.Schema.Types.ObjectId,
+    ref : 'User',
+    autopopulate : { maxDepth : 1 }
+  }],
+
+  directMessages : [{
+    type : mongoose.Schema.Types.ObjectId,
+    ref : 'Message',
+    autopopulate : { maxDepth : 1 }
+  }],
+
+  tweets : [{
+    type : mongoose.Schema.Types.ObjectId,
+    ref : 'Tweet',
+    autopopulate : { maxDepth : 2 }
+  }],
+
+  likedTweets : [{
+    type : mongoose.Schema.Types.ObjectId,
+    ref : 'Tweet',
+    autopopulate : { maxDepth : 1 }
+  }],
+
+  pinnedTweet : [{
+    type : mongoose.Schema.Types.ObjectId,
+    ref : 'Tweet',
+    autopopulate : { maxDepth : 1 }
+  }],
+
+  notifications : [{
+    type : mongoose.Schema.Types.ObjectId,
+    ref : 'Notification',
+    autopopulate : { maxDepth : 1 }
+  }]
+})
+
+UserSchema.plugin(require('mongoose-autopopulate'))
+
+module.exports = mongoose.model('User', UserSchema)
+
+/*class User {
   constructor({
   name,
   username,
-  location,
-  website,
-  mail,
-  profilephoto,
-  backgroundphoto,
-  bio,
-  birth,
   replies = [],
   followers = [],
   following = [],
@@ -28,13 +80,6 @@ class User {
   {
     this.name = name
     this.username = username
-    this.website = website
-    this.location = location
-    this.mail = mail
-    this.profilephoto = profilephoto
-    this.backgroundphoto = backgroundphoto
-    this.bio = bio
-    this.birth = birth
     this.replies = replies
     this.id = id
     this.followers = followers
@@ -45,7 +90,6 @@ class User {
     this.pinnedTweet = pinnedTweet
     this.notifications = notifications
     this.createdAt = new Date().toLocaleDateString()
-
   }
 
 follow(user){
@@ -114,13 +158,6 @@ sendDirectMessage(message, user){
 static create({ 
   name,
   username,
-  location,
-  website,
-  mail,
-  profilephoto,
-  backgroundphoto,
-  bio,
-  birth,
   replies,
   createDate,
   followers,
@@ -137,13 +174,6 @@ static create({
   return new User({
     name,
     username,
-    location,
-    website,
-    mail,
-    profilephoto,
-    backgroundphoto,
-    bio,
-    birth,
     replies,
     createDate,
     followers,
@@ -161,4 +191,4 @@ static create({
 
 module.exports = User
 
-
+*/

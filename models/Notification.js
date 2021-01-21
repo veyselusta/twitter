@@ -1,9 +1,9 @@
-class Notification {
-  constructor(author,type,item){
-    this.author = author
-    this.type = type
-    this.item = item
-  }
-}
+const mongoose = require('mongoose')
 
-module.exports = Notification
+const NotificationSchmea = new mongoose.Schema({
+  author : Object,
+  item : Object,
+  type : String
+})
+
+module.exports = mongoose.model('Notification', NotificationSchmea)

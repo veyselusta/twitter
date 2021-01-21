@@ -1,15 +1,19 @@
-const uuid = require('uuid')
 
-class Tweet{
-  constructor(user,text, id = uuid.v4()){
-    this.user = user
-    this.id = id
-    this.text = text
-    this.createdAt = new Date().toLocaleDateString()
-    this.likedBy = []
-    this.replies = []
-    this.retweets =[]
-  }
-}
+const mongoose = require('mongoose')
 
-module.exports = Tweet
+const TweetSchema = new mongoose.Schema({
+  user : {
+    type : mongoose.Schema.Types.ObjectId,
+    ref : 'User',
+    autopopulate : { maxDepth : 1 }
+  },
+  text : String,
+  createdAt : String,
+  likedBy : [],
+  replies : [],
+  retweets : []
+})
+
+TweetSchema.plugin(require('mongoose-autopopulate'))
+
+module.exports = mongoose.model('Tweet', TweetSchema)

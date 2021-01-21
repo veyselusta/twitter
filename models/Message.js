@@ -1,9 +1,9 @@
-class Message {
-  constructor(message,author){
-    this.message = message
-    this.author = author
-    this.createdAt = new Date().toLocaleDateString()
-  }
-}
+const mongoose = require('mongoose')
 
-module.exports = Message
+const MessageSchema = new mongoose.Schema({
+  message : String,
+  author : Object,
+  createdAt : String
+})
+
+module.exports = mongoose.model('Message', MessageSchema)
