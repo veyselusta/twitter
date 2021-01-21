@@ -1,12 +1,12 @@
 ###
-GET http://localhost:3000/user/600442078fef7b4808ae444d HTTP/1.1
+GET http://localhost:3000/user/600889a4f705595398cd7442 HTTP/1.1
 
 ###
 GET http://localhost:3000/thread HTTP/1.1
 
 
 ### 
-POST http://localhost:3000/user/6008403585b7de3010434537/tweet
+POST http://localhost:3000/user/600889a4f705595398cd7442/tweet
 content-type : application/json
 
 {"text" : "üç"}
@@ -15,19 +15,19 @@ content-type : application/json
 POST http://localhost:3000/user/create HTTP/1.1
 content-type : application/json
 
-{"name" : "kutlay"}
+{"name" : "veysel", "username" : "veyxsel", "age" : 20}
 
 ###
-POST http://localhost:3000/user/6008455ba5838420fcc9bc3d/follow HTTP/1.1
+POST http://localhost:3000/user/600889b7f705595398cd7443/follow HTTP/1.1
 content-type : application/json
 
-{"otherId" : "6008403585b7de3010434537"}
+{"otherId" : "600911ea91e69030ec593347"}
 
 ###
-POST http://localhost:3000/user/6008403585b7de3010434537/like HTTP/1.1
+POST http://localhost:3000/user/600889b7f705595398cd7443/like HTTP/1.1
 content-type : application/json
 
-{"name" : "veysel"}
+{ "tweetId" : "6009141cb94ed83df09722de"}
 
 ###
 DELETE http://localhost:3000/user/600442068fef7b4808ae4449/delete HTTP/1.1
