@@ -1,5 +1,4 @@
-const {userService, tweetService} = require('../services')
-const User = require('../models/User')
+const {userService } = require('../services')
 
 const router = require('express').Router()
 
@@ -44,6 +43,15 @@ router.post('/create', async(req,res)=>{
   res.send(user)
 })
 
+router.post('/:userId/tweet', async (req,res)=>{
+  const { userId } = req.params
+  const { text } = req.body
+
+  const tivit = await userService.tweet(text, userId)
+
+  res.send(tivit)
+})
+
 router.post('/:userId/reply', async(req,res)=>{
   const { userId } = req.params
   const { text, tweetId } = req.body
@@ -66,18 +74,9 @@ router.post('/:userId/like', async (req,res)=>{
   const { userId } = req.params
   const { tweetId } = req.body
 
-  await userService.like(userId, tweetId)
+  const tweet =await userService.like(userId, tweetId)
   
-  res.send('ok')
-})
-
-router.post('/:userId/tweet', async (req,res)=>{
-  const { userId } = req.params
-  const { text } = req.body
-
-  const tivit = await userService.tweet(text, userId)
-
-  res.send(tivit)
+  res.send(tweet)
 })
 
 router.patch('/:userId', async (req,res)=>{
