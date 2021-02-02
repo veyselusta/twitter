@@ -7,7 +7,7 @@ const MessageSchema = new mongoose.Schema({
     ref : 'User',
     autopopulate : { maxDepth : 1 }
   },
-  createdAt : String
+  createdAt : Date
 })
 
 MessageSchema.plugin(require('mongoose-autopopulate'))

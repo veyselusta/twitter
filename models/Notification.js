@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const NotificationSchmea = new mongoose.Schema({
+const NotificationSchema = new mongoose.Schema({
   type : String,
   author : {
     type : mongoose.Schema.Types.ObjectId,
@@ -11,4 +11,4 @@ const NotificationSchmea = new mongoose.Schema({
 
 NotificationSchema.plugin(require('mongoose-autopopulate'))
 
-module.exports = mongoose.model('Notification', NotificationSchmea)
+module.exports = mongoose.model('Notification', NotificationSchema)

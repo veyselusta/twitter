@@ -1,4 +1,3 @@
-
 const mongoose = require('mongoose')
 
 const TweetSchema = new mongoose.Schema({
@@ -12,7 +11,7 @@ const TweetSchema = new mongoose.Schema({
   },
   likedBy : [{
     type : mongoose.Schema.Types.ObjectId,
-    ref : 'Tweet',
+    ref : 'User',
     autopopulate : { maxDepth : 1 }
 
   }],
