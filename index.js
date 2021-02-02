@@ -17,8 +17,4 @@ app.use('/', indexRouter)
 app.use('/user', userRouter)
 app.use('/thread', threadRouter)
 
-app.listen(3000, ()=>{
-  console.log('server ayaklandı')
-})
-
-
+module.exports = app
