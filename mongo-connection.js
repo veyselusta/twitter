@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost/week-6', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://localhost/twitter-clone', { useNewUrlParser: true, useUnifiedTopology: true })
 
 var db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'))
