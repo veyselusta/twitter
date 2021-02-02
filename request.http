@@ -24,10 +24,10 @@ content-type : application/json
 {"otherId" : "600911ea91e69030ec593347"}
 
 ###
-POST http://localhost:3000/user/600889b7f705595398cd7443/like HTTP/1.1
+POST http://localhost:3000/user/60191f64491eb2774c2ec542/like HTTP/1.1
 content-type : application/json
 
-{ "tweetId" : "6009141cb94ed83df09722de"}
+{ "tweetId" : "60192797ca2c375c10ad99cb"}
 
 ###
 DELETE http://localhost:3000/user/600442068fef7b4808ae4449/delete HTTP/1.1
