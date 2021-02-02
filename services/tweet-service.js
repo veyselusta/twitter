@@ -10,7 +10,6 @@ class TweetService extends BaseService {
   async findByUserId(userId){
     this.findBy('id',userId)
   }
-  
 }
 
 module.exports = new TweetService(Tweet)

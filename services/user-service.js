@@ -62,10 +62,6 @@ class UserService extends BaseService {
 
     return tweet
   }
-
-
-
-
 }
 
 module.exports = new UserService(User)
