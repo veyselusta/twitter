@@ -7,8 +7,10 @@ class TweetService extends BaseService {
     return this.findBy('name', name)
   }
 
-  async findByUserId(userId){
-    this.findBy('id',userId)
+  async findByTweetId(tweetId){
+    const tweet = await this.find(tweetId)
+
+    return tweet
   }
 }
 
