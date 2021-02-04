@@ -7,7 +7,7 @@
     "start": "node .bin/www",
     "watch": "nodemon --ignore '*.json'",
     "test": "jest --coverage --verbose",
-    "test-watch": "jest --coverage --verbose --watch "
+    "test-watch": "jest --coverage --verbose --watch"
   },
   "author": "",
   "license": "ISC",

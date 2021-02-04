@@ -13,6 +13,12 @@ test('user and tweet', async (done)=>{
   .send(userToCreate)
   .expect(200)
 
+  await request.get(`/user/${userResponse.body._id}`).expect(200)
+  await request.get(`/user/${userResponse.body._id}/followers`).expect(200)
+  await request.get(`/user/${userResponse.body._id}/followings`).expect(200)
+  await request.get(`/user/${userResponse.body._id}/likes`).expect(200)
+  await request.get(`/user/${userResponse.body._id}/reply`).expect(200)
+
   expect(userResponse.body).toMatchObject(userToCreate)
 
   done()
