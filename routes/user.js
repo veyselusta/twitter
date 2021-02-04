@@ -4,7 +4,6 @@ const router = require('express').Router()
 
 router.get('/:userId', async (req,res)=>{
   const user = await userService.find(req.params.userId)
-  if(!user) res.send('oww')
 
   res.render('user', { user })
 })
@@ -40,7 +39,7 @@ router.get('/:userId/likes', async (req,res)=>{
 
 router.get('/:userId/reply', async (req,res)=>{
   const user = await userService.find(req.params.userId)
-  const replies = user.replies
+  const replies = user.ownReplies
 
   res.render('replies', { replies })
 })
@@ -73,9 +72,9 @@ router.post('/:userId/follow', async (req,res)=>{
   const { userId } = req.params
   const { otherId } = req.body
 
-  await userService.follow(userId, otherId)
+  const rv = await userService.follow(userId, otherId)
 
-  res.send('ok')
+  res.send(rv)
 })
 
 router.post('/:userId/like', async (req,res)=>{
@@ -101,10 +100,12 @@ router.patch('/:userId', async (req,res)=>{
   const { name } = req.body
   
   await userService.update(userId, { name })
-  res.send('ok')
+  const user = await userService.find(userId)
+
+  res.send(user)
 })
 
-router.delete('/:userId/delete', async (req,res)=>{
+router.delete('/:userId', async (req,res)=>{
   await userService.removeBy('_id', req.params.userId)
 
   res.send('ok')

@@ -29,7 +29,7 @@ class BaseService {
     return this.model.find({ [property]: value})
   }
 
-  async update(id, object){
+  async update(id, object) {
     return this.model.findByIdAndUpdate(id, object)
   }
 

@@ -17,6 +17,8 @@ class UserService extends BaseService {
     
     await user.save()
     await other.save()
+
+    return user 
   }
 
   async reply(userId, tweetId, text){
