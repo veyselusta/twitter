@@ -14,8 +14,6 @@ test('like', async (done)=>{
       age : 23
     }
 
-  const text = 'like test'
-
   const userResponse = await request
     .post('/user/create')
     .send(userToCreate)
@@ -25,20 +23,13 @@ test('like', async (done)=>{
     .post('/user/create')
     .send(userToCreateSecond)
     .expect(200)
-
-  const tweetResponse = await request
-    .post(`/user/${userResponse.body._id}/tweet`)
-    .send({ text, userId: userResponse.body._id })
-    .expect(200)
     
-  const likeResponse = await request
-    .post(`/user/${userResponseSecond.body._id}/like`)
-    .send({ tweetId: tweetResponse.body._id, userId: userResponseSecond.body._id })
+  const followResponse = await request
+    .post(`/user/${userResponse.body._id}/follow`)
+    .send({ userId: userResponse.body._id, otherId: userResponseSecond.body._id })
     .expect(200)
-  
-  await request.get(`/user/${userResponseSecond.body._id}/likes`).expect(200)
 
-  expect(likeResponse.body.likedBy[0]).toMatchObject(userToCreateSecond)//userReponseSecond.body dene
+  expect(followResponse.body.following[0]).toMatchObject(userToCreateSecond)
 
   done()
 

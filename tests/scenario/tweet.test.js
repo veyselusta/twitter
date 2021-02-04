@@ -20,10 +20,12 @@ test('user and tweet', async (done)=>{
     .send({ text, userId: userResponse.body._id })
     .expect(200)
 
-  expect(tweetResponse.body).toMatchObject({
-    user: userResponse.body,
-    text
-  })
+    await request.get(`/user/status/${tweetResponse.body._id}`).expect(200)
+
+    expect(tweetResponse.body).toMatchObject({
+      user: userResponse.body,
+      text
+    })
   
   done()
 
