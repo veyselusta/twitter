@@ -4,12 +4,22 @@ GET http://localhost:3000/user/600889a4f705595398cd7442 HTTP/1.1
 ###
 GET http://localhost:3000/thread HTTP/1.1
 
+###
+GET http://localhost:3000/user/status/6019c02f50c92a6ec88c6a3d HTTP/1.1
+
 
 ### 
 POST http://localhost:3000/user/600889a4f705595398cd7442/tweet
 content-type : application/json
 
 {"text" : "üç"}
+
+### 
+POST http://localhost:3000/user/601b38b2d8189a6c20789a45/reply HTTP/1.1
+content-type : application/json
+
+{"text" : "reply", "tweetId" : "601b3971ea5bf8573056d99f"}
+
 
 ###
 POST http://localhost:3000/user/create HTTP/1.1

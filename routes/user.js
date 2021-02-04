@@ -1,4 +1,4 @@
-const {userService } = require('../services')
+const { userService, tweetService } = require('../services')
 
 const router = require('express').Router()
 
@@ -7,6 +7,14 @@ router.get('/:userId', async (req,res)=>{
   if(!user) res.send('oww')
 
   res.render('user', { user })
+})
+
+router.get('/status/:tweetId', async (req,res)=>{
+  const { tweetId } = req.params
+
+  const tweet = await tweetService.findByTweetId(tweetId)
+
+  res.send(tweet)
 })
 
 router.get('/:userId/followers', async (req,res)=>{
@@ -56,9 +64,9 @@ router.post('/:userId/reply', async(req,res)=>{
   const { userId } = req.params
   const { text, tweetId } = req.body
 
-  await user.reply(userId, tweetId)
+  const tweet = await userService.reply(userId, tweetId, text)  
 
-  res.send('ok')
+  res.send(tweet)
 })
 
 router.post('/:userId/follow', async (req,res)=>{
@@ -76,6 +84,15 @@ router.post('/:userId/like', async (req,res)=>{
 
   const tweet =await userService.like(userId, tweetId)
   
+  res.send(tweet)
+})
+
+router.post('/:userId/pintweet', async (req,res)=>{
+  const { userId } = req.params
+  const { tweetId } = req.body
+
+  const tweet = await userService.pinTweet(userId, tweetId)
+
   res.send(tweet)
 })
 
