@@ -24,9 +24,7 @@ test('user and tweet', async (done)=>{
     user: userResponse.body,
     text
   })
-
-  expect(userResponse.body).toMatchObject(userToCreate)
-
+  
   done()
 
 })

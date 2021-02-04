@@ -4,17 +4,18 @@ const request = require('supertest')(app)
 test('like', async (done)=>{
     const userToCreate = {
       name : 'veysel',
-      username : 'tester',
+      username : 'bir',
       age : 24
     }
 
     const userToCreateSecond = {
       name : 'kutlay',
-      username : 'ktcs',
+      username : 'iki',
       age : 23
     }
 
-  const text = 'hello world'
+  const text = 'test tweet'
+  const replyText = 'reply'
   
   const userResponse = await request
     .post('/user/create')
@@ -31,17 +32,12 @@ test('like', async (done)=>{
     .send({ text, userId: userResponse.body._id })
     .expect(200)
     
-  const likeResponse = await request
-    .post(`/user/${userResponseSecond.body._id}/like`)
-    .send({ tweetId: tweetResponse.body._id, userId: userResponseSecond.body._id })
+  const replyResponse = await request
+    .post(`/user/${userResponseSecond.body._id}/reply`)
+    .send({ tweetId: tweetResponse.body._id, userId: userResponseSecond.body._id, text: replyText })
     .expect(200)
-
-    const rv = userResponseSecond.body
-
-    expect(likeResponse.body).toMatchObject({
-      user : userToCreate,
-      text
-    })
+    
+    expect(replyResponse.body.replies[0].user).toMatchObject(userToCreateSecond)
 
   done()
 
