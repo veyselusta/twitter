@@ -10,7 +10,7 @@ const UserSchema = new mongoose.Schema({
   username : {type : String, required : true},
   age : { type : Number, required : true, min : 18},
 
-  replies : [{
+  ownReplies : [{
     type : mongoose.Schema.Types.ObjectId,
     ref : 'Tweet',
     autopopulate : { maxDepth : 1 }
@@ -40,13 +40,13 @@ const UserSchema = new mongoose.Schema({
     autopopulate : { maxDepth : 2 }
   }],
 
-  likedTweets : [{
+  pinnedTweets : [{
     type : mongoose.Schema.Types.ObjectId,
     ref : 'Tweet',
     autopopulate : { maxDepth : 1 }
   }],
 
-  pinnedTweet : [{
+  likedTweets : [{
     type : mongoose.Schema.Types.ObjectId,
     ref : 'Tweet',
     autopopulate : { maxDepth : 1 }
