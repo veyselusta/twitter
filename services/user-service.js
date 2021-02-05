@@ -4,10 +4,6 @@ const User = require('../models/User')
 
 class UserService extends BaseService {
 
-  async findByName(name) {
-    return this.model.findBy('name', name)
-  }
-
   async follow(userId, otherId){
     const user = await this.find(userId)
     const other = await this.find(otherId)
@@ -51,6 +47,9 @@ class UserService extends BaseService {
     
     tweet.retweets.push(tweet)
     user.tweets.push(tweet)
+
+    await user.save()
+    await tweet.save()
 
     return tweet
   }

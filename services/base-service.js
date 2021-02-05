@@ -1,6 +1,5 @@
-const fs = require('fs')
-
 class BaseService {
+  
   constructor(model){
     this.model = model
   }
@@ -36,7 +35,6 @@ class BaseService {
   async removeBy(property,value){
     return this.model.deleteOne({[property] : value})
   }
-
 }
 
 module.exports = BaseService
