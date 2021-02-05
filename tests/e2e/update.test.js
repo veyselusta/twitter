@@ -20,7 +20,7 @@ test('update', async (done)=>{
     .send({ userId: userResponse.body._id, name: name })
     .expect(200)
 
-  expect(updateResponse.body).toMatchObject({ name })
+  expect(updateResponse.body[0]).toMatchObject({ name })
 
   done()
 })
