@@ -59,6 +59,15 @@ router.post('/:userId/tweet', async (req,res)=>{
   res.send(tivit)
 })
 
+router.post('/:userId/retweet', async (req,res)=>{
+  const { userId } = req.params
+  const { tweetId } = req.body
+
+  const tivit = await userService.retweet(userId, tweetId)
+
+  res.send(tivit)
+})
+
 router.post('/:userId/reply', async(req,res)=>{
   const { userId } = req.params
   const { text, tweetId } = req.body
@@ -100,7 +109,7 @@ router.patch('/:userId', async (req,res)=>{
   const { name } = req.body
   
   await userService.update(userId, { name })
-  const user = await userService.find(userId)
+  const user = await userService.findBy('_id', userId)
 
   res.send(user)
 })
